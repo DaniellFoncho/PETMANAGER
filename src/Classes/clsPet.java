@@ -9,6 +9,8 @@ import Interface.*;
 
 
 public class clsPet implements Ianimal, Ivertebrate {
+    
+    int petId;
     private String nombre;
    
     private String codigo;
@@ -17,13 +19,16 @@ public class clsPet implements Ianimal, Ivertebrate {
     private float born_year;
     private clsVeterinari veterinari;
     
-    public clsPet( String nombre,  String codigo, String healtstatus, String color, float born_year ) {
+    public clsPet( int petId, String nombre,  String codigo, String healtstatus, String color, float born_year ) {
+        
+        this.petId = petId;
         this.nombre = nombre;
         
         this.codigo = codigo;
         this.healtstatus = healtstatus;
         this.color      = color;
         this.born_year  = born_year;
+        
     }
     
     //firmas
@@ -159,6 +164,20 @@ public class clsPet implements Ianimal, Ivertebrate {
      */
     public void setVeterinari(clsVeterinari veterinari) {
         this.veterinari = veterinari;
+    }
+
+    /**
+     * @return the petId
+     */
+    public int getPetId() {
+        return petId;
+    }
+
+    /**
+     * @param petId the petId to set
+     */
+    public void setPetId(int petId) {
+        this.petId = petId;
     }
     
     

@@ -11,12 +11,23 @@ package Classes;
  */
 public class clsDoctor {
     private String name;
-    private float targeta_profesional;
+    private String adress;
+    private String phone;
+    private String Id;
 
-    public clsDoctor(String name, float targeta_profesional) {
+    public clsDoctor(String name, String adress, String phone,  String Id) {
         this.name = name;
-        this.targeta_profesional = targeta_profesional;
+        this.adress = adress;
+        this.phone = phone;
+        this.Id = Id;
     }
+
+    public clsDoctor(String doctor1Name, String doctor1Adress, String doctor1Phone) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+ 
 
     
     
@@ -47,15 +58,42 @@ public class clsDoctor {
     /**
      * @return the targeta_profesional
      */
-    public float getTargeta_profesional() {
-        return targeta_profesional;
+    public String getId() {
+        return Id;
+    }
+
+
+     
+    public void setId(String LicenceDoctor) {
+        this.Id = LicenceDoctor;
     }
 
     /**
-     * @param targeta_profesional the targeta_profesional to set
+     * @return the adress
      */
-    public void setTargeta_profesional(float targeta_profesional) {
-        this.targeta_profesional = targeta_profesional;
+    public String getAdress() {
+        return adress;
+    }
+
+    /**
+     * @param adress the adress to set
+     */
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    /**
+     * @return the phone
+     */
+    public String getPhone() {
+        return phone;
+    }
+
+    /**
+     * @param phone the phone to set
+     */
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
     
     

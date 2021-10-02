@@ -21,6 +21,14 @@ public class clsVeterinari extends AbsHospital {
         this.phone = phone;
         this.doctor = doctor;
     }
+
+    public clsVeterinari(String name, String adress, String phone, String doctor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public clsVeterinari(String veterinaria1Name, String veterinaria1Adress, String veterinaria1Phone) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public String Petcare(clsPet pet){
         System.out.println("Atendiendo a la mascota " + pet.getNombre());
         return pet.getHealtstatus();

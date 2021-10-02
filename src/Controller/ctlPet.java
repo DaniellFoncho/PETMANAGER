@@ -8,6 +8,7 @@ package Controller;
 import Classes.*;
 import Model.*;
 import Model.ModelCat.modelCat;
+import java.util.LinkedList;
 
 /**
  *
@@ -19,6 +20,7 @@ public class ctlPet {
 private modelDog modelDog;
 private modelCat modelCat;
 
+
     public ctlPet() {
         this.modelDog = new modelDog ();
     }
@@ -27,10 +29,10 @@ private modelCat modelCat;
     public boolean CreatePet(clsPet pet)  {           
         try {
             switch (pet.getAnimalType()){
-               case "Gato":
-                
+               case "Cat":
+                   this.modelCat.CreatePet((clsCat)pet);
                    break;
-               case "Perro":
+               case "Dog":
                    this.modelDog.CreatePet((clsDog)pet);
                 
                     break;
@@ -45,10 +47,10 @@ private modelCat modelCat;
 public boolean EditPet(clsPet pet)  {           
         try {
             switch (pet.getAnimalType()){
-               case "Gato":
-                
+               case "Cat":
+                   this.modelCat.EditPet((clsCat)pet);
                    break;
-               case "Perro":
+               case "Dog":
                    this.modelDog.EditPet((clsDog)pet);
                 
                     break;
@@ -64,11 +66,11 @@ public boolean EditPet(clsPet pet)  {
 public boolean DeletePet(clsPet pet)  {           
         try {
             switch (pet.getAnimalType()){
-               case "Gato":
-                
+               case "Cat":
+                this.modelCat.DeleteCat((clsCat)pet);
                    break;
-               case "Perro":
-                this.modelDog.DeletePet((clsDog)pet);
+               case "Dog":
+                this.modelDog.DeleteDog((clsDog)pet);
                     break;
             }
             return true;
@@ -84,14 +86,33 @@ public  clsPet SearchPet(String code, String type )  {
         
         try {
             switch (type){
-               case "Gato":
-                
+               case "Cat":
+                    pet= pet = this.modelCat.SearchPet(code);
                    break;
-               case "Perro":
+               case "Dog":
                      pet = this.modelDog.SearchPet(code);
                     break;
             }
             return pet;
+            
+        } catch (Exception e)   {
+             return null;
+       
+        }
+     } 
+public  LinkedList<clsPet> ListPet( String type )  {   
+   LinkedList<clsPet> petList = null;
+        
+        try {
+            switch (type){
+               case "Cat":
+                    petList = this.modelCat.ListPet();
+                   break;
+               case "Dog":
+                     petList = this.modelDog.ListPet();
+                    break;
+            }
+            return petList;
             
         } catch (Exception e)   {
              return null;

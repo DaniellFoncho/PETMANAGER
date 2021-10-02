@@ -10,6 +10,7 @@ package Classes;
  * @author daniel
  */
 public class clsDog extends clsPet {
+    int dogId;
     private String breed;
     private boolean pedigree;
     
@@ -17,11 +18,13 @@ public class clsDog extends clsPet {
     
     //constructor
 
-    public clsDog(String breed, boolean pedigree, String codigo, String nombre, int born_year, String color, String healtstatus) {
-        super(nombre,  codigo, healtstatus, color, born_year);
+    public clsDog(int dogId, String breed, boolean pedigree, int petId, String codigo, String nombre, int born_year, String color, String healtstatus) {
+        super(petId, nombre,  codigo, healtstatus, color, born_year);
         this.breed = breed;
         this.pedigree = pedigree;
     }
+
+    
 
  
     
@@ -63,7 +66,7 @@ public class clsDog extends clsPet {
     
     @Override
     public String getAnimalType(){
-        return "perro.";
+        return "Dog";
         
     }
     @Override
@@ -71,6 +74,7 @@ public class clsDog extends clsPet {
         return 230;
         
      }
+    
     /**
      * @return the breed
      */
@@ -98,5 +102,23 @@ public class clsDog extends clsPet {
      */
     public void setPedigree(boolean pedigree) {
         this.pedigree = pedigree;
+    }
+
+    /**
+     * @return the dogId
+     */
+    public int getDogId() {
+        return dogId;
+    }
+
+    /**
+     * @param dogId the dogId to set
+     */
+    public void setDogId(int dogId) {
+        this.dogId = dogId;
+    }
+
+    public boolean isPedigree() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
       }
